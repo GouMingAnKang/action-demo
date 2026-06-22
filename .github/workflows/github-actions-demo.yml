@@ -17,6 +17,6 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: docker ps
-      - run: docker pull hello-world
+      - run: docker pull vllm/vllm-openai-rocm
       - run: docker run hello-world
       - run: curl https://www.baidu.com
