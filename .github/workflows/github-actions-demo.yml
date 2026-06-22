@@ -18,5 +18,5 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: docker ps
       - run: docker pull vllm/vllm-openai-rocm
-      - run: docker run hello-world
+      - run: docker save vllm-openai-rocm.tar vllm/vllm-openai-rocm:latest
       - run: curl https://www.baidu.com
