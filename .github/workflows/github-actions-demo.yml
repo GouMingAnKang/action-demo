@@ -17,7 +17,6 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: df -h
+      - run: pwd
       - run: docker ps
-      - run: docker pull vllm/vllm-openai-rocm
-      - run: docker save -o vllm-openai-rocm.tar vllm/vllm-openai-rocm:latest
       - run: ls -l ./
