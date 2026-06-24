@@ -1,1 +1,1 @@
-FROM vllm/vllm-openai-rocm:latest
+FROM  vllm/vllm-openai-rocm:latest
