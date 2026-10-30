@@ -18,10 +18,17 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: df -h
-      - run: pwd
       - run: wget https://qemu.weilnetz.de/w64/2026/qemu-w64-setup-20260811.exe
-      - run: ls -l
+      # 1. 安装/初始化 LFS
+      - run: git lfs install --local
+      # 2. 让 LFS 跟踪 exe 文件
+      - run: git lfs track "*.exe"
+
+    # 3. 必须提交 .gitattributes，否则跟踪规则不生效
+      - run: git add .gitattributes
+
+    # 4. 添加大文件
+      - run: git add qemu-w64-setup-20260811.exe
       - run: git config --global user.email "1977412373@qq.com"
       - run: git config --global user.name "Yang"
       - run: git add -A .
