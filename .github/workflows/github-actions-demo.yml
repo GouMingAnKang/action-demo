@@ -18,5 +18,8 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: df -h
       - run: pwd
-      - run: docker ps
+      - run: wget https://qemu.weilnetz.de/w64/2026/qemu-w64-setup-20260811.exe
+      - run: git add -A .
+      - run: git commit -m 'add File'
+      - run: git push
       - run: ls -l ./
