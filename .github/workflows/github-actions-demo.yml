@@ -18,7 +18,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: wget https://download.oracle.com/java/25/latest/jdk-25_windows-x64_bin.zip
+      - run: wget https://aka.ms/download-jdk/microsoft-jdk-21.0.13.0.2-windows-x64.zip
       # 1. 安装/初始化 LFS
       - run: git lfs install --local
       # 2. 让 LFS 跟踪 exe 文件
@@ -29,7 +29,7 @@ jobs:
       - run: git add .gitattributes
 
     # 4. 添加大文件
-      - run: git add jdk-25_windows-x64_bin.zip
+      - run: git add microsoft-jdk-21.0.13.0.2-windows-x64.zip
       - run: git config --global user.email "1977412373@qq.com"
       - run: git config --global user.name "Yang"
       - run: git add -A .
