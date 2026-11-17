@@ -24,6 +24,7 @@ jobs:
       # 2. 让 LFS 跟踪 exe 文件
       - run: git lfs track "*.exe"
       - run: git lfs track "*.zip"
+      - run: git lfs track "*.gz"
 
     # 3. 必须提交 .gitattributes，否则跟踪规则不生效
       - run: git add .gitattributes
