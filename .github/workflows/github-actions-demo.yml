@@ -18,7 +18,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: wget https://eternallybored.org/misc/netcat/netcat-win32-1.12.zip
+      - run: wget https://download.oracle.com/graalvm/21/latest/graalvm-jdk-21_linux-x64_bin.tar.gz
       # 1. 安装/初始化 LFS
       - run: git lfs install --local
       # 2. 让 LFS 跟踪 exe 文件
@@ -29,7 +29,7 @@ jobs:
       - run: git add .gitattributes
 
     # 4. 添加大文件
-      - run: git add netcat-win32-1.12.zip
+      - run: git add graalvm-jdk-21_linux-x64_bin.tar.gz
       - run: git config --global user.email "1977412373@qq.com"
       - run: git config --global user.name "Yang"
       - run: git add -A .
